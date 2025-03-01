@@ -8,17 +8,24 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
-import {Link} from "expo-router";
+import { useRouter } from "expo-router";
 
 export default function SignInScreen() {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleSignIn = () => {
     console.log("Signing in with:", email, password);
-    // Add authentication logic here
+  
+    if (email === "iim@gmail.com" && password === "123") {
+      router.replace("/(tabs)/homepage");
+    } else {
+      alert("Invalid credentials. Try again.");
+    }
   };
+  
 
   return (
     <SafeAreaView className="flex-1 bg-white px-6 justify-center">

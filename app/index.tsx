@@ -5,9 +5,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function HomeScreen() {
   const navigation= useNavigation();
 
-  // useEffect(()=>{
-  //   navigation.replace("auth");
-  // },[]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace("(auth)"); 
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <SafeAreaView className="min-h-screen">

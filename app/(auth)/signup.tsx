@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {  useNavigation } from "@react-navigation/native";
-import {Link} from "expo-router";
 
 export default function SignUpScreen() {
   const navigation = useNavigation();
